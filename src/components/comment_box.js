@@ -15,15 +15,20 @@ class CommentBox extends Component {
     e.preventDefault();
     this.props.saveComment(this.state.comment);
     this.setState ({ comment: '' });
+    document.getElementById('input-comment').focus();
   }
   render() {
     return (
       <form onSubmit={this.handleSubmit.bind(this)} className="comment-box">
+        <h4>Add a comment</h4>
         <textarea
+          id="input-comment"
           value={this.state.comment}
           onChange={this.handleChange.bind(this)} />
-        <button action="submit">Submit commit</button>
-      </form>
+          <div>
+            <button action="submit">Submit commit</button>
+          </div>
+        </form>
     );
   }
 }
