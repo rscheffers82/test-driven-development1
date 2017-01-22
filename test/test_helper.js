@@ -15,6 +15,9 @@ global.window = global.document.defaultView;
 global.navigator = global.window.navigator;
 const $ = jquery(window);
 
+// Set up chai-jquery
+chaiJquery(chai, chai.util, $);
+
 // Build 'renderComponent' helper that should render a given react class
 function renderComponent(ComponentClass, props = {}, state = {}) {
   // ComponentClass = the class itself class 'Todo extends Component {}'
@@ -39,9 +42,6 @@ $.fn.simulate = function(eventName, value) {
 // To call simulate
 // $('<div>').simulate();
 
-
-// Set up chai-jquery
-chaiJquery(chai, chai.util, $);
 
 export  { renderComponent, expect };
 
