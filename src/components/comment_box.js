@@ -33,5 +33,5 @@ class CommentBox extends Component {
   }
 }
 // 1st argument is reserved for mapStateToProps
-// 2nd argument
+// 2nd argument are the actions
 export default connect(null, actions)(CommentBox);
